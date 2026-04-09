@@ -73,11 +73,11 @@ function main(sources: MainSources): MainSinks {
   // ==================== Sidebar Component ====================
   const sidebarProps$ = xs.of({
     datasetPaths: [
-      '/data/positive-correlation.json',
-      '/data/negative-correlation.json',
-      '/data/no-correlation.json',
-      '/data/strong-linear.json',
-      '/data/exponential-growth.json',
+      'data/positive-correlation.json',
+      'data/negative-correlation.json',
+      'data/no-correlation.json',
+      'data/strong-linear.json',
+      'data/exponential-growth.json',
     ],
   });
 
