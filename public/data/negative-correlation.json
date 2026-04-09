@@ -1,0 +1,11 @@
+{
+  "id": "negative-correlation",
+  "name": "Negative Correlation",
+  "data": [
+    { "x": 1, "y": 8.5 },
+    { "x": 2, "y": 7.2 },
+    { "x": 3, "y": 5.8 },
+    { "x": 4, "y": 4.1 },
+    { "x": 5, "y": 2.9 }
+  ]
+}

@@ -1,0 +1,449 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.12), transparent 30%),
+    linear-gradient(180deg, #f4f8fc 0%, #eef3f9 100%);
+  color: #1f2937;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.hero-panel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #103c64 0%, #1d5f8f 55%, #3b82b6 100%);
+  color: #f8fbff;
+  box-shadow: 0 1.2rem 3rem rgba(16, 60, 100, 0.18);
+}
+
+.hero-copy {
+  max-width: 46rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.78;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.hero-text {
+  max-width: 42rem;
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.hero-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 15rem;
+}
+
+.tip-chip {
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.95rem;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.sidebar-shell {
+  height: 100%;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 0.8rem 2rem rgba(15, 23, 42, 0.08);
+}
+
+.sidebar-title {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sidebar-intro {
+  padding: 0.9rem 1rem;
+  border-radius: 0.85rem;
+  background: #f8fbff;
+  border: 1px solid #dbeafe;
+}
+
+.sidebar-guide {
+  padding: 1rem;
+  border-radius: 0.85rem;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+}
+
+.lesson-banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.4rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 0.8rem 2rem rgba(15, 23, 42, 0.06);
+}
+
+.lesson-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+}
+
+.lesson-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.lesson-headline {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.lesson-prompt {
+  color: #475569;
+}
+
+.lesson-stats {
+  display: flex;
+  gap: 0.9rem;
+  align-items: stretch;
+}
+
+.lesson-stat {
+  min-width: 7.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.85rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.lesson-stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.lesson-stat-value {
+  display: block;
+  margin-top: 0.25rem;
+  color: #0f172a;
+}
+
+.chart-card {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 0.8rem 2rem rgba(15, 23, 42, 0.06);
+}
+
+.chart-card-header {
+  margin-bottom: 1rem;
+}
+
+.chart-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.chart-card-subtitle {
+  color: #64748b;
+}
+
+/* ==================== Regression Chart Styles ==================== */
+.regression-chart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  overflow: hidden;
+}
+
+.chart-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+/* Data points */
+.data-point {
+  fill: #0d6efd;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.data-point:hover {
+  r: 7;
+  fill: #0a58ca;
+}
+
+/* Hovered point highlight */
+.hovered-point-highlight {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    stroke-opacity: 1;
+    stroke-width: 2;
+  }
+  50% {
+    stroke-opacity: 0.5;
+    stroke-width: 3;
+  }
+  100% {
+    stroke-opacity: 1;
+    stroke-width: 2;
+  }
+}
+
+/* Regression line */
+.regression-line {
+  stroke: #198754;
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  animation: drawLine 0.5s ease-out;
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Custom line */
+.custom-line {
+  stroke: #dc3545;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  transition: all 0.3s ease;
+}
+
+/* Temp line (dragging) */
+.temp-line {
+  stroke: #6c757d;
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+}
+
+/* Vertical hover line */
+.hover-vertical-line {
+  stroke: #dc3545;
+  stroke-width: 1.5;
+  stroke-dasharray: 3, 3;
+  opacity: 0.7;
+}
+
+/* Axis styling */
+#x-axis,
+#y-axis {
+  font-size: 0.875rem;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  color: #495057;
+}
+
+#x-axis .domain,
+#y-axis .domain {
+  stroke: #dee2e6;
+}
+
+#x-axis text,
+#y-axis text {
+  fill: #6c757d;
+}
+
+#x-axis line,
+#y-axis line {
+  stroke: #dee2e6;
+}
+
+/* ==================== Statistics Panel Styles ==================== */
+.statistics-panel {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  padding: 1.25rem;
+  border: 1px solid #dee2e6;
+  transition: box-shadow 0.3s ease;
+}
+
+.statistics-panel:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.statistics-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #0d6efd;
+  display: inline-block;
+}
+
+.sse-section {
+  margin-bottom: 1rem;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.metric-card {
+  padding: 0.9rem 1rem;
+  border-radius: 0.85rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.metric-label {
+  display: block;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  display: block;
+  margin-top: 0.25rem;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: #495057;
+  font-size: 1rem;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #0d6efd;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+}
+
+.stat-value.text-muted {
+  color: #6c757d !important;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.residual-section {
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 0.375rem;
+  border-left: 4px solid #0d6efd;
+  max-height: 2.5rem;
+}
+
+.equation-section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.equation-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.85rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.equation-value {
+  color: #0f172a;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.teaching-note {
+  padding-top: 0.25rem;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 767.98px) {
+  .hero-panel,
+  .lesson-banner,
+  .equation-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-tips,
+  .lesson-stats {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .statistics-panel {
+    padding: 1rem;
+  }
+
+  .statistics-title {
+    font-size: 1rem;
+  }
+
+  .stat-label,
+  .stat-value {
+    font-size: 0.875rem;
+  }
+
+  .residual-section {
+    max-height: none;
+  }
+}
