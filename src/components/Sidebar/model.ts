@@ -27,14 +27,22 @@ export function model(actions: SidebarActions): Stream<SidebarState> {
 
   // Datasets loaded action: replaces datasets in state
   const datasetsLoadedPatch$ = actions.datasetsLoaded$.map(
-    (datasets: Dataset[]) => (state: SidebarState) => ({
-      ...state,
-      datasets,
-      selectedDataset:
-        datasets.length > 0 ? datasets[0].id : state.selectedDataset,
-      isLoading: false,
-      loadError: null,
-    })
+    (datasets: Dataset[]) => (state: SidebarState) => {
+      const hasSelectedDataset = datasets.some(
+        (dataset) => dataset.id === state.selectedDataset
+      );
+
+      return {
+        ...state,
+        datasets,
+        selectedDataset:
+          hasSelectedDataset || datasets.length === 0
+            ? state.selectedDataset
+            : datasets[0].id,
+        isLoading: false,
+        loadError: null,
+      };
+    }
   );
 
   const datasetLoadErrorPatch$ = actions.datasetLoadError$

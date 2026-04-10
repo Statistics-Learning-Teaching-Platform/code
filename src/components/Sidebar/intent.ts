@@ -1,4 +1,5 @@
 import xs, { Stream } from 'xstream';
+import flattenConcurrently from 'xstream/extra/flattenConcurrently';
 import { $el } from '../../_utils/dom';
 import type { SidebarSources, SidebarActions, Dataset } from './types';
 import type { Response } from '@cycle/http';
@@ -45,7 +46,7 @@ export function intent(sources: SidebarSources): SidebarActions {
         };
       })
     )
-    .flatten();
+    .compose(flattenConcurrently);
 
   const datasetsLoaded$ = datasetResults$
     .filter(
